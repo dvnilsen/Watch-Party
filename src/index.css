@@ -1,10 +1,11 @@
-/* CSS Custom Properties */
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
 :root {
   --white: lightblue;
   --tan-1: steelblue;
   --tan-2: skyblue;
   --tan-3: skyblue;
-  --tan-4: slategrey;
+  --tan-4: $light;
   --orange: teal;
   --text-light: lightblue;
   --text-dark: #615954;
@@ -117,6 +118,7 @@ input:focus {
   border-color: var(--orange);
 }
 
+/*
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
@@ -151,7 +153,5 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+*/ 
 
-hr {
-  color: black;
-}

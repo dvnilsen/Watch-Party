@@ -41,9 +41,9 @@ export default function App() {
               {/* Route components in here */}
               <Route path="/search" element={<SearchPage />} />
               <Route path="/posts/new" element={<NewPostPage addPost={addPost}/>} />
-              <Route path="/posts" element={<OrderHistoryPage />} />
+              <Route path="/posts" element={<OrderHistoryPage/>} /> 
             </Routes>
-            <div>{postList}</div> 
+            {postList}
           </>
           :
           <AuthPage setUser={setUser} />

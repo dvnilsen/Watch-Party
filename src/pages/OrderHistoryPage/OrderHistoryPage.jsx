@@ -16,8 +16,8 @@ export default function OrderHistoryPage() {
   return (
     <>
       <h1>{btn}</h1>
-      <button onClick={msg}>Push Me</button>
-      <button onClick={reset}>Push Me Instead</button>
+      <button class="button is-primary" onClick={msg}>Push Me</button>
+      <button class="button is-danger" onClick={reset}>Push Me Instead</button>
     </>
   );
 }

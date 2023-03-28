@@ -1,10 +1,10 @@
 
 export default function PostsFeed({ post }) {
     return (
-     <div>
-      <h3>
+     <div class="box">
+      <h2>
         { post.text } 
-      </h3>
+      </h2>
         <div>
           Made at: {new Date(post.createdAt).toLocaleString()} 
         </div>
