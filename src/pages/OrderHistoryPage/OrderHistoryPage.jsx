@@ -1,10 +1,23 @@
+import { useState } from "react";
 
 export default function OrderHistoryPage() {
-  const msg = "This button works once!";
+  let [btn, setBtn] = useState("Try the button");
+  let [n, setN] = useState(0); 
+  const msg = function() {
+    n++;
+    btn = `You pressed the button ${n} times`;
+    setBtn(btn);
+    setN(n);  
+  }
+  const reset = function() {
+    setBtn("Try the button");
+    setN(0); 
+  }
   return (
     <>
-      <h1>OrderHistoryPage</h1>
+      <h1>{btn}</h1>
       <button onClick={msg}>Push Me</button>
+      <button onClick={reset}>Push Me Instead</button>
     </>
   );
 }

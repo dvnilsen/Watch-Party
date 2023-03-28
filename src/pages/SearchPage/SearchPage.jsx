@@ -22,6 +22,9 @@ export default function HomePage() {
   return (
     <>
       <button onClick={fetchData}>Fetch Data</button>
+      <ul>
+        <li>{data.title}</li>
+      </ul>
   
     </>
   );
