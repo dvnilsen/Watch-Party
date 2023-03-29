@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import SearchItems from '../../components/SearchItems/SearchItems';
 import * as moviesApi from "../../utilities/movies-api";
 
 //require("dotenv").config(); 
@@ -17,18 +18,18 @@ export default function SearchPage() {
     setData(searchResults);
   };
 
-  const movieTitles = data.map(t => <li>{t.Title}</li>)
-  const moviePosters = data.map(p => <li><img src={p.Poster} /></li>)
+
+  const searchObjects = data.map((m) => <SearchItems movie={m} />);
 
   return (
     <>
 
       <input class="control" value={searchTerm} name="Search" onChange={(evt) => setSearchTerm(evt.target.value)}/>
       <button class="button is-primary" onClick={fetchData}>Fetch Data</button>
+      <hr/>
 
-      <ul class="card">
-        <li>{movieTitles}</li>
-        <li>{moviePosters}</li>
+      <ul>
+        {searchObjects}
       </ul>
   
     </>
