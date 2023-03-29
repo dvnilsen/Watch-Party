@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+
 export default function NewPostPage({ addPost }) {
 
     const [newPost, setNewPost] = useState({text:""})
@@ -22,7 +23,7 @@ export default function NewPostPage({ addPost }) {
               <label class="label">Write A New Post</label>
               <textarea 
                   class="input"
-                  rows="4"
+                  rows="8"
                   type="text"
                   name="text"
                   value={newPost.text}

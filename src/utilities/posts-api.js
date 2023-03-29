@@ -6,5 +6,5 @@ export async function getAllPosts() {
 }
 
 export async function createPost(data) {
-    return sendRequest(`${BASE_URL}/new`, 'POST', data);
+    return sendRequest(`${BASE_URL}`, 'POST', data);
   }

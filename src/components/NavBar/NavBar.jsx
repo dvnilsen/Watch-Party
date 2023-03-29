@@ -14,9 +14,7 @@ export default function NavBar({ user, setUser }) {
         &nbsp; | &nbsp;
         <Link to="/">Feed</Link>
         &nbsp; | &nbsp;
-        <Link to="/posts">Button Function Test</Link>
-        &nbsp; | &nbsp;
-        <Link to="/posts/new">New Post</Link>
+        <Link to="/new">New Post</Link>
         &nbsp; | &nbsp;
         <Link to="/search">Search</Link>
         &nbsp; | &nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>

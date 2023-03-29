@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import PostsItems from "../PostsItems/PostsItems";
 import * as postsAPI from '../../utilities/posts-api'
 
-export default function PostsFeed({ post }) {
-    const [posts, setPosts] = useState([]);
+
+export default function PostsFeed( { posts, setPosts } ) {
+    const [selectedPost, setSelectedPost] = useState(null);
 
     useEffect(function() {
       async function getPosts() {
@@ -13,13 +14,8 @@ export default function PostsFeed({ post }) {
       getPosts();
     }, [])
   
-    async function addPost(post) {
-      const newPost = await postsAPI.createPost(post)
-      setPosts([...posts, newPost])
-    }
-  
-    const postList = posts.map((post, idx) => (
-      <PostsItems post={post} key={idx} />
+    const postList = posts.map((post, index) => (
+      <PostsItems post={post} index={index} />
     ));
 
     return (
