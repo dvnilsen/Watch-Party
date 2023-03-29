@@ -9,7 +9,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <>
-      <nav>
+      <nav class="nav">
         <span>Welcome, {user.name}</span>
         &nbsp; | &nbsp;
         <Link to="/">Feed</Link>

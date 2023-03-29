@@ -8,28 +8,28 @@ import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import SearchPage from "../SearchPage/SearchPage"; 
 import PostsFeed from '../../components/PostsFeed/PostsFeed';
-import * as postsAPI from '../../utilities/posts-api'
+
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [posts, setPosts] = useState([]);
+  // const [posts, setPosts] = useState([]);
 
-  useEffect(function() {
-    async function getPosts() {
-      const allPosts = await postsAPI.getAllPosts();
-      setPosts(allPosts)
-    }
-    getPosts();
-  }, [])
+  // useEffect(function() {
+  //   async function getPosts() {
+  //     const allPosts = await postsAPI.getAllPosts();
+  //     setPosts(allPosts)
+  //   }
+  //   getPosts();
+  // }, [])
 
-  async function addPost(post) {
-    const newPost = await postsAPI.createPost(post)
-    setPosts([...posts, newPost])
-  }
+  // async function addPost(post) {
+  //   const newPost = await postsAPI.createPost(post)
+  //   setPosts([...posts, newPost])
+  // }
 
-  const postList = posts.map((post, idx) => (
-    <PostsFeed post={post} key={idx} />
-  ));
+  // const postList = posts.map((post, idx) => (
+  //   <PostsFeed post={post} key={idx} />
+  // ));
 
   return (
     <main className="App">
@@ -40,10 +40,10 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/search" element={<SearchPage />} />
-              <Route path="/posts/new" element={<NewPostPage addPost={addPost}/>} />
+              <Route path="/posts/new" element={<NewPostPage />} />
               <Route path="/posts" element={<OrderHistoryPage/>} /> 
+              <Route path="/" element={<PostsFeed />} /> 
             </Routes>
-            {postList}
           </>
           :
           <AuthPage setUser={setUser} />

@@ -18,13 +18,20 @@ export default function NewPostPage({ addPost }) {
     return (
         <>
           <form onSubmit={handleSubmit}>
-          <input 
-              type="text"
-              name="text"
-              value={newPost.text}
-              placeholder="Write a Post"
-              onChange={handleChange} />
-          <button type="submit">Add Post</button>
+            <div class="field">
+              <label class="label">Write A New Post</label>
+              <textarea 
+                  class="input"
+                  rows="4"
+                  type="text"
+                  name="text"
+                  value={newPost.text}
+                  placeholder="Write a Post"
+                  onChange={handleChange} />
+            </div>
+            <div class="field">
+              <button class="button is-primary" type="submit">Add Post</button>
+            </div> 
           </form>
         </>
     )
