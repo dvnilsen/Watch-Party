@@ -60,7 +60,7 @@ export default function App() {
                   getMovies={getMovies}
                 />} 
               />
-              <Route path="/:movieId" element={<MovieDetailPage movies={movies} />} />
+              <Route path="/:movieId" element={<MovieDetailPage movies={movies} setMovies={setMovies} user={user}/>} />
               <Route path="/new" element={<NewPostPage />} />
               <Route path="/" element={<PostsFeed posts={posts} setPosts={setPosts}/>} />
               <Route path="/:postId" element={<PostDetailPage posts={posts} deletePost={deletePost}/>} />

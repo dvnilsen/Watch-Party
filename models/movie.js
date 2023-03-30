@@ -2,27 +2,27 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const movieSchema = new Schema({
-    title: {
+    Title: {
         type: String,
         required: true
     },
-    year: {
+    Year: {
         type: String,
         required: true
     },
-    imdb: {
+    imdbID: {
         type: String,
         required: true
     },
-    poster: {
+    Poster: {
         type: String,
         required: true
     },
-    user: {
+    users: [{
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
-    },
+    }],
  }, {
         timestamps: true
 
