@@ -1,5 +1,10 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+body {
+  background-color: aliceblue;
+}
+
+/* /*
 :root {
   --white: lightblue;
   --tan-1: steelblue;
@@ -111,14 +116,14 @@ input {
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
-  outline: none;
+  /* outline: none;
 }
 
 input:focus {
   border-color: var(--orange);
 }
 
-/*
+
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
@@ -152,6 +157,6 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
-*/ 
+} */
+
 

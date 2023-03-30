@@ -1,8 +1,9 @@
+
 import { useState } from "react"
+import PostsFeed from "../../components/PostsFeed/PostsFeed";
 
 
 export default function NewPostPage({ addPost }) {
-
     const [newPost, setNewPost] = useState({text:""})
     
     function handleSubmit(evt) {
