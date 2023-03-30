@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom"; 
+import { useParams, Link, useNavigate } from "react-router-dom";
 
-export default function SearchItems({ movie }) {
+export default function MovieDetailPage({ movies }) {
+    const {movieId} = useParams();
+    const movie = movies.find(m => m.imdbID === movieId)
+    const navigate = useNavigate();
+
     return (
         <>
         <ul class="card">
@@ -14,7 +18,6 @@ export default function SearchItems({ movie }) {
             </div>
             <footer>
             <button class="button is-primary">Add To Library</button>
-            <Link to={`/${movie.imdbID}`}>View Post</Link>
             </footer>
         </ul>
         <hr/>

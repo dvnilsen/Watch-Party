@@ -8,24 +8,15 @@ import * as moviesApi from "../../utilities/movies-api";
 // `https://www.omdbapi.com/?apikey=acd8ae1a&t=${searchTerm}`
 
 
-export default function SearchPage() {
-  const [data, setData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  //const BaseUrl = "https://www.omdbapi.com/?apikey="; 
+export default function SearchPage({ movies, setMovies, searchTerm, setSearchTerm, getMovies }) {
 
-  const fetchData = async function() {
-    const searchResults = await moviesApi.search(searchTerm);
-    setData(searchResults);
-  };
-
-
-  const searchObjects = data.map((m) => <SearchItems movie={m} />);
+  const searchObjects = movies.map((m) => <SearchItems movie={m} />);
 
   return (
     <>
 
       <input class="control" value={searchTerm} name="Search" onChange={(evt) => setSearchTerm(evt.target.value)}/>
-      <button class="button is-primary" onClick={fetchData}>Fetch Data</button>
+      <button class="button is-primary" onClick={getMovies}>Fetch Data</button>
       <hr/>
 
       <ul>
