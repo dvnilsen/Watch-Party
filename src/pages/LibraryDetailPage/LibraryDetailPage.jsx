@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default function MovieItems({ movie }) {
+export default function LibraryDetailPage( {library }) {
+    const {movieId} = useParams();
+    const movie = library.find(m => m._imdbID === movieId)
+    
     return (
         <>
         <ul class="card">
@@ -13,7 +16,6 @@ export default function MovieItems({ movie }) {
                 <a href={`https://www.imdb.com/title/${movie.imdbID}`}>IMDb Page</a>
             </div>
             <footer>
-            <Link to={`/${movie.imdbID}`}>View Movie Page</Link>
             </footer>
         </ul>
         <hr/>

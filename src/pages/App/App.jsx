@@ -10,8 +10,9 @@ import PostsFeed from '../../components/PostsFeed/PostsFeed';
 import * as postsAPI from '../../utilities/posts-api'
 import PostDetailPage from "../../pages/PostDetailPage/PostDetailPage";
 import MovieDetailPage from '../../pages/MovieDetailPage/MovieDetailPage';
-import * as moviesApi from "../../utilities/movies-api";
+import * as moviesAPI from "../../utilities/movies-api";
 import MovieListPage from '../MovieListPage/MovieListPage';
+import LibraryDetailPage from '../LibraryDetailPage/LibraryDetailPage';
 
 
 export default function App() {
@@ -19,6 +20,15 @@ export default function App() {
   const [posts, setPosts] = useState([]);
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [library, setLibrary] = useState([]);
+
+  useEffect(function() {
+      async function getLibrary() {
+        const allMovies = await moviesAPI.getLibrary();
+        setLibrary(allMovies)
+      }
+      getLibrary();
+    }, [])
 
   useEffect(function() {
     async function getPosts() {
@@ -36,7 +46,7 @@ export default function App() {
   }
 
   async function getMovies() {
-    const searchResults = await moviesApi.search(searchTerm);
+    const searchResults = await moviesAPI.search(searchTerm);
     setMovies(searchResults);
   };
 
@@ -63,7 +73,8 @@ export default function App() {
               <Route path="/new" element={<NewPostPage posts={posts} setPosts={setPosts}/>} />
               <Route path="/" element={<PostsFeed posts={posts} setPosts={setPosts}/>} />
               <Route path="/:postId" element={<PostDetailPage posts={posts} deletePost={deletePost}/>} />
-              <Route path="/movie-library" element={<MovieListPage />} />
+              <Route path="/:movieId" element={<LibraryDetailPage library={library} />} />
+              <Route path="/movie-library" element={<MovieListPage library={library} />} />
             </Routes>
           </>
           :
