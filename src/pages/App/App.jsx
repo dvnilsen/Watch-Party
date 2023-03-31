@@ -11,6 +11,7 @@ import * as postsAPI from '../../utilities/posts-api'
 import PostDetailPage from "../../pages/PostDetailPage/PostDetailPage";
 import MovieDetailPage from '../../pages/MovieDetailPage/MovieDetailPage';
 import * as moviesApi from "../../utilities/movies-api";
+import MovieListPage from '../MovieListPage/MovieListPage';
 
 
 export default function App() {
@@ -42,9 +43,9 @@ export default function App() {
 
   return (
     <main className="App">
-      <h1 class="title">Welcome to WatchParty, {user.name}!</h1>
       { user ?
           <>
+            <h1 class="title">Welcome to WatchParty, {user.name}!</h1>
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
@@ -62,6 +63,7 @@ export default function App() {
               <Route path="/new" element={<NewPostPage posts={posts} setPosts={setPosts}/>} />
               <Route path="/" element={<PostsFeed posts={posts} setPosts={setPosts}/>} />
               <Route path="/:postId" element={<PostDetailPage posts={posts} deletePost={deletePost}/>} />
+              <Route path="/movie-library" element={<MovieListPage />} />
             </Routes>
           </>
           :

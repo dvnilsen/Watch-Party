@@ -13,3 +13,7 @@ export async function getMovieDetail(imdbID) {
 return sendRequest(`${BASE_URL}/${imdbID}`);
 }
 
+export async function getLibrary() {
+    return sendRequest(`${BASE_URL}/library`);
+  }
+

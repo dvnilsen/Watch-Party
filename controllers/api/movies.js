@@ -4,7 +4,8 @@ const Movie = require("../../models/movie");
 module.exports = {
     searchApi,
     create,
-    getMovieDetail
+    getMovieDetail,
+    getLibrary
 }
 
 async function searchApi(req, res) {
@@ -40,4 +41,14 @@ async function create(req, res) {
 async function getMovieDetail(req, res) {
     const movie = await Movie.findOne({imdbID: req.params.imdbID});
         res.json(movie);
+}
+
+async function getLibrary(req, res) {
+    try {
+        req.body.user = req.user._id
+        const library = await Movie.find({user: req.user._id});
+        res.json(library);
+    } catch (err) {
+        res.status(400).json(err)
+    }
 }
