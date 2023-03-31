@@ -32,7 +32,6 @@ export default function App() {
     const deletedPost = await postsAPI.deletePost(id)
     const updatedPosts = [...posts] 
     setPosts(updatedPosts.filter(post => post._id !== deletedPost._id));
-    
   }
 
   async function getMovies() {
@@ -41,17 +40,16 @@ export default function App() {
   };
 
 
-
   return (
     <main className="App">
-      <h1 class="title">Welcome to WatchParty!</h1>
+      <h1 class="title">Welcome to WatchParty, {user.name}!</h1>
       { user ?
           <>
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
               <Route 
-                path="/search" 
+                path="/search-movies" 
                 element={<SearchPage 
                   movies={movies} 
                   setMovies={setMovies} 
@@ -61,7 +59,7 @@ export default function App() {
                 />} 
               />
               <Route path="/:movieId" element={<MovieDetailPage movies={movies} setMovies={setMovies} user={user}/>} />
-              <Route path="/new" element={<NewPostPage />} />
+              <Route path="/new" element={<NewPostPage posts={posts} setPosts={setPosts}/>} />
               <Route path="/" element={<PostsFeed posts={posts} setPosts={setPosts}/>} />
               <Route path="/:postId" element={<PostDetailPage posts={posts} deletePost={deletePost}/>} />
             </Routes>

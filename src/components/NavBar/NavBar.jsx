@@ -9,17 +9,20 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <>
-      <nav class="nav">
-        <span>Welcome, {user.name}</span>
-        &nbsp; | &nbsp;
-        <Link to="/">Feed</Link>
-        &nbsp; | &nbsp;
-        <Link to="/new">New Post</Link>
-        &nbsp; | &nbsp;
-        <Link to="/search">Search</Link>
-        &nbsp; | &nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+      <nav class="navbar">
+        <Link class ="navbar-item"  to="/">My Posts</Link>
+        <Link class ="navbar-item" to="/movie-library">My Movies</Link>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+          <div class="navbar-dropdown">
+            <Link class ="navbar-item" to="/new">Create New Post</Link>
+            <Link class ="navbar-item" to="/search-movies">Search For Movies</Link>
+            <Link class ="navbar-item" to="" onClick={handleLogOut}>Log Out</Link>
+          </div>
+        </div>
       </nav>
-    <hr></hr>
     </>
   );
 }
