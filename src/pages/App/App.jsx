@@ -12,7 +12,6 @@ import PostDetailPage from "../../pages/PostDetailPage/PostDetailPage";
 import MovieDetailPage from '../../pages/MovieDetailPage/MovieDetailPage';
 import * as moviesAPI from "../../utilities/movies-api";
 import MovieListPage from '../MovieListPage/MovieListPage';
-import LibraryDetailPage from '../LibraryDetailPage/LibraryDetailPage';
 
 
 export default function App() {
@@ -69,11 +68,10 @@ export default function App() {
                   getMovies={getMovies}
                 />} 
               />
-              <Route path="/:movieId" element={<MovieDetailPage movies={movies} setMovies={setMovies} user={user}/>} />
+              <Route path="/:movieId" element={<MovieDetailPage movies={movies} setMovies={setMovies} user={user} library={library}/>} />
               <Route path="/new" element={<NewPostPage posts={posts} setPosts={setPosts}/>} />
               <Route path="/" element={<PostsFeed posts={posts} setPosts={setPosts}/>} />
               <Route path="/:postId" element={<PostDetailPage posts={posts} deletePost={deletePost}/>} />
-              <Route path="/:movieId" element={<LibraryDetailPage library={library} />} />
               <Route path="/movie-library" element={<MovieListPage library={library} />} />
             </Routes>
           </>

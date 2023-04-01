@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import * as moviesAPI from "../../utilities/movies-api"; 
 
-export default function MovieDetailPage({ movies, user }) {
+export default function MovieDetailPage({ library, movies, user }) {
     const {movieId} = useParams();
     const apiMovie = movies.find(m => m.imdbID === movieId)
-    const [movie, setMovie] = useState(null || apiMovie);
+    const libraryMovie = library.find(m => m.imdbID === movieId)
+    const [movie, setMovie] = useState(libraryMovie || apiMovie);
+    console.log(movie); 
     const navigate = useNavigate();
 
     useEffect(function() {

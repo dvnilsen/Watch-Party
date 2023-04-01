@@ -46,7 +46,7 @@ async function getMovieDetail(req, res) {
 async function getLibrary(req, res) {
     try {
         req.body.user = req.user._id
-        const library = await Movie.find({user: req.user._id});
+        const library = await Movie.find({users: req.user._id});
         res.json(library);
     } catch (err) {
         res.status(400).json(err)
