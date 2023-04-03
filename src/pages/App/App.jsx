@@ -69,7 +69,7 @@ export default function App() {
               />
               <Route path="/library/:movieId" element={<MovieDetailPage movies={movies} setMovies={setMovies} user={user} library={library}/>} />
               <Route path="/new" element={<NewPostPage posts={posts} setPosts={setPosts} library={library}/>} />
-              <Route path="/" element={<PostsFeed posts={posts} setPosts={setPosts}/>} />
+              <Route path="/" element={<PostsFeed posts={posts} setPosts={setPosts} library={library}/>} />
               <Route path="/posts/:postId" element={<PostDetailPage posts={posts} deletePost={deletePost}/>} />
               <Route path="/library" element={<MovieListPage library={library} />} />
             </Routes>

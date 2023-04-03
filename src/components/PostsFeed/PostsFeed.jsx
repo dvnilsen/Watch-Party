@@ -1,7 +1,8 @@
 
+import MovieItems from "../MovieItems/MovieItems";
 import PostsItems from "../PostsItems/PostsItems";
 
-export default function PostsFeed ( { posts } ) {
+export default function PostsFeed ( { posts, library } ) {
 
   
     const postList = posts.map((post, index) => (

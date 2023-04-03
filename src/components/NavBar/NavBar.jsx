@@ -9,7 +9,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <>
-      <nav class="navbar-menu" role="navigation">
+      <nav class="navbar" role="navigation">
           <Link class ="navbar-item"  to="/">My Posts</Link>
           <Link class ="navbar-item" to="/library">My Movies</Link>
           <div class="navbar-item has-dropdown is-hoverable">
