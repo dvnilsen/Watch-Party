@@ -11,7 +11,7 @@ export default function PostsFeed ( { posts } ) {
     return (
         <>
         <h2 class="title">Post Feed</h2>
-        {postList}
+          {postList}
         </>
     )
 }

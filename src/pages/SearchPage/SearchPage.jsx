@@ -20,7 +20,9 @@ export default function SearchPage({ movies, setMovies, searchTerm, setSearchTer
       <hr/>
 
       <ul>
-        {searchObjects}
+          <div class="columns is-multiline mx-4">
+            {searchObjects}
+          </div>
       </ul>
   
     </>

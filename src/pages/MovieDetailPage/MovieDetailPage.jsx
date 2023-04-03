@@ -7,8 +7,8 @@ export default function MovieDetailPage({ library, movies, user }) {
     const apiMovie = movies.find(m => m.imdbID === movieId)
     const libraryMovie = library.find(m => m.imdbID === movieId)
     const [movie, setMovie] = useState(libraryMovie || apiMovie);
-    console.log(movie); 
     const navigate = useNavigate();
+    const whichButton = movie.users && movie.users.includes(user._id); 
 
     useEffect(function() {
         async function getMovie() {
@@ -26,7 +26,7 @@ export default function MovieDetailPage({ library, movies, user }) {
 
     return (
         <>
-        <ul class="card">
+        <ul class="card py-4 mx-5">
             <div class="card-image">
                 <img src={movie.Poster}/>
             </div>
@@ -36,7 +36,7 @@ export default function MovieDetailPage({ library, movies, user }) {
                 <a href={`https://www.imdb.com/title/${movie.imdbID}`}>IMDb Page</a>
             </div>
             <footer>
-            <button class="button is-primary" onClick={() => addMovie(movie)}>{movie.users && movie.users.includes(user._id) ? "Remove From Library" : "Add To Library"}</button>
+            { whichButton ? <button class="button is-danger" onClick={() => addMovie(movie)}>Remove From Library</button> : <button class="button is-primary" onClick={() => addMovie(movie)}>Add To Library</button> }
             </footer>
         </ul>
         <hr/>

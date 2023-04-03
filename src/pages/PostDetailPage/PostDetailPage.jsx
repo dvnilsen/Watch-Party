@@ -16,7 +16,7 @@ export default function PostDetailPage({ posts, deletePost }) {
          <h2 class="subtitle">
            { post.text } 
          </h2>
-         <button onClick={handleDelete}>Delete Post</button>
+         <button class="button is-danger" onClick={handleDelete}>Delete Post</button>
            <div>
              Made at: {new Date(post.createdAt).toLocaleString()} 
            </div>

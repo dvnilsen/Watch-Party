@@ -4,11 +4,11 @@ import * as postsAPI from '../../utilities/posts-api'
 export default function PostsItems({ post, index }) {
 
     return (
-     <div class="box">
+     <div class="box mx-6">
       <h2 class="subtitle">
         { post.text } 
       </h2>
-      <Link to={`/${post._id}`}>View Post</Link>
+      <Link to={`/posts/${post._id}`}>View Post</Link>
         <div>
           Made at: {new Date(post.createdAt).toLocaleString()} 
         </div>

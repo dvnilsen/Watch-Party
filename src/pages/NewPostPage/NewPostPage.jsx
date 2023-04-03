@@ -26,9 +26,9 @@ export default function NewPostPage({ posts, setPosts }) {
 
     return (
         <>
-          <form onSubmit={handleSubmit}>
+        <h1 class="title">Write A New Post</h1>
+          <form class="box mx-6" onSubmit={handleSubmit}>
             <div class="field">
-              <label class="title">Write A New Post</label>
               <textarea 
                   class="textarea"
                   rows="5"
