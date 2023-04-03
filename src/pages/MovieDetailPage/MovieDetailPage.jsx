@@ -12,7 +12,7 @@ export default function MovieDetailPage({ library, movies, user }) {
 
     useEffect(function() {
         async function getMovie() {
-          const dbMovie = await moviesAPI.getMovieDetail(apiMovie.imdbID);
+          const dbMovie = await moviesAPI.getMovieDetail(movie.imdbID);
           if (dbMovie) setMovie(dbMovie)
         }
         getMovie();
@@ -26,7 +26,7 @@ export default function MovieDetailPage({ library, movies, user }) {
 
     return (
         <>
-        <ul class="card py-4 mx-5">
+        <ul class="card py-4 mx-5 my-4">
             <div class="card-image">
                 <img src={movie.Poster}/>
             </div>
@@ -35,8 +35,8 @@ export default function MovieDetailPage({ library, movies, user }) {
             <div class="content">
                 <a href={`https://www.imdb.com/title/${movie.imdbID}`}>IMDb Page</a>
             </div>
-            { whichButton ? <button class="button is-danger" onClick={() => addMovie(movie)}>Remove From My Movies</button> : <button class="button is-primary" onClick={() => addMovie(movie)}>Add To My Movies</button> }
-            <button class="button is-link" onClick={() => navigate("/library")}>Go To My Movies</button>
+            { whichButton ? <button class="button is-danger mx-2" onClick={() => addMovie(movie)}>Remove From My Movies</button> : <button class="button is-primary mx-2" onClick={() => addMovie(movie)}>Add To My Movies</button> }
+            <button class="button is-link mx-2" onClick={() => navigate("/library")}>Go To My Movies</button>
         </ul>
         
         </>

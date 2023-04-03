@@ -11,7 +11,7 @@ export default function PostsFeed ( { posts, library } ) {
 
     return (
         <>
-        <h2 class="title">Post Feed</h2>
+        <h2 class="title my-4">Post Feed</h2>
           {postList}
         </>
     )

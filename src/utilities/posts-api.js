@@ -9,6 +9,10 @@ export async function createPost(data) {
     return sendRequest(`${BASE_URL}`, 'POST', data);
   }
 
+export async function updatePost(id, data) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', data);
+}
+
 export async function deletePost(id) {
-    return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }

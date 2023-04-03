@@ -12,6 +12,7 @@ import PostDetailPage from "../../pages/PostDetailPage/PostDetailPage";
 import MovieDetailPage from '../../pages/MovieDetailPage/MovieDetailPage';
 import * as moviesAPI from "../../utilities/movies-api";
 import MovieListPage from '../MovieListPage/MovieListPage';
+import EditPostPage from "../EditPostPage/EditPostPage";
 
 
 export default function App() {
@@ -71,6 +72,7 @@ export default function App() {
               <Route path="/new" element={<NewPostPage posts={posts} setPosts={setPosts} library={library}/>} />
               <Route path="/" element={<PostsFeed posts={posts} setPosts={setPosts} library={library}/>} />
               <Route path="/posts/:postId" element={<PostDetailPage posts={posts} deletePost={deletePost}/>} />
+              <Route path="/edit/:postId" element={<EditPostPage posts={posts} setPosts={setPosts} library={library}/>} />
               <Route path="/library" element={<MovieListPage library={library} />} />
             </Routes>
           </>

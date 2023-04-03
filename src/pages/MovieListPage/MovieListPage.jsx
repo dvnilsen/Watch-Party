@@ -13,13 +13,13 @@ export default function MovieListPage({ library, setLibrary }) {
     getLibrary();
   }, []);
 
-  const movieList = libraryList.map((movie) => (
-    <MovieItems movie={movie} />
+  const movieList = libraryList.map((movie, idx) => (
+    <MovieItems movie={movie} key={idx}/>
   ));
 
   return (
     <>
-    <h1 class="title">Movie Library</h1>
+    <h1 class="title my-4">Movie Library</h1>
     <div class="columns is-multiline mx-4">
       {movieList}
     </div>

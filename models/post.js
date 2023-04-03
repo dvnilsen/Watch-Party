@@ -8,7 +8,8 @@ const postSchema = new Schema({
         required: true
     },
     movie: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'Movie',
         required: true
     },
     user: {

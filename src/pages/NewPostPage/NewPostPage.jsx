@@ -33,7 +33,7 @@ export default function NewPostPage({ posts, setPosts, library }) {
 
     return (
         <>
-        <h1 class="title">Write A New Post</h1>
+        <h1 class="title my-4">Write A New Post</h1>
           <form class="box mx-6" onSubmit={handleSubmit}>
             <div class="field">
               <textarea 
@@ -47,14 +47,16 @@ export default function NewPostPage({ posts, setPosts, library }) {
                   onChange={handleChange} />
             </div>
             <h1 class="subtitle">Select A Movie From Your Movies</h1>
-            <select class="select my-2" name="movie" value={selectedOption} onChange={handleSelect}>
-              <option value="">Select A Movie</option>
-              {library.map((option) => (
-                <option key={option.Title} value={option.imdbID}>
-                  {option.Title}
-              </option>
-              ))}
-            </select>
+
+                <select class="select" name="movie" value={selectedOption} onChange={handleSelect}>
+                  <option class="menu-item" value="">Select A Movie</option>
+                  {library.map((option) => (
+                    <option class="menu-item" key={option.Title} value={option.imdbID}>
+                      {option.Title}
+                  </option>
+                  ))}
+                </select>
+
             <div>
               <button class="button is-primary my-4 mx-3" type="submit">Add New Post</button>
               <button class="button is-link my-4 mx-3" onClick={() => navigate("/")}>Return To Post Feed</button>
