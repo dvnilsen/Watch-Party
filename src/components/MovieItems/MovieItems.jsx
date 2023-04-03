@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function MovieItems({ movie }) {
+    const navigate = useNavigate(); 
     return (
         <>
         <div class="column is-one-third">
@@ -8,13 +9,13 @@ export default function MovieItems({ movie }) {
                 <div>
                     <img src={movie.Poster}/>
                 </div>
-                <li>Title: {movie.Title}</li>
+                <li>{movie.Title}</li>
                 <li>Release Year: {movie.Year}</li>
                 <div class="content">
                     <a href={`https://www.imdb.com/title/${movie.imdbID}`}>IMDb Page</a>
                 </div>
                 <footer>
-                <Link to={`/library/${movie.imdbID}`}>View Movie Page</Link>
+                <button class="button is-link" onClick={() => navigate(`/library/${movie.imdbID}`)}>View Title</button>
                 </footer>
             </ul>
         </div>

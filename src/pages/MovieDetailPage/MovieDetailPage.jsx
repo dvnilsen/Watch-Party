@@ -30,16 +30,15 @@ export default function MovieDetailPage({ library, movies, user }) {
             <div class="card-image">
                 <img src={movie.Poster}/>
             </div>
-            <li>Title: {movie.Title}</li>
+            <li>{movie.Title}</li>
             <li>Release Year: {movie.Year}</li>
             <div class="content">
                 <a href={`https://www.imdb.com/title/${movie.imdbID}`}>IMDb Page</a>
             </div>
-            <footer>
-            { whichButton ? <button class="button is-danger" onClick={() => addMovie(movie)}>Remove From Library</button> : <button class="button is-primary" onClick={() => addMovie(movie)}>Add To Library</button> }
-            </footer>
+            { whichButton ? <button class="button is-danger" onClick={() => addMovie(movie)}>Remove From My Movies</button> : <button class="button is-primary" onClick={() => addMovie(movie)}>Add To My Movies</button> }
+            <button class="button is-link" onClick={() => navigate("/library")}>Go To My Movies</button>
         </ul>
-        <hr/>
+        
         </>
     )
 }

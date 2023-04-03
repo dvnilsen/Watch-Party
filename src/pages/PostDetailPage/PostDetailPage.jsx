@@ -12,13 +12,16 @@ export default function PostDetailPage({ posts, deletePost }) {
 
 
     return (
-        <div class="box">
+        <div class="box ">
          <h2 class="subtitle">
            { post.text } 
          </h2>
+         <hr></hr>
          <button class="button is-danger" onClick={handleDelete}>Delete Post</button>
+         <button class="button is-link" onClick={() => navigate("/")}>Return To Feed</button>
+         <hr></hr>
            <div>
-             Made at: {new Date(post.createdAt).toLocaleString()} 
+             Posted: {new Date(post.createdAt).toLocaleString()} 
            </div>
         </div>
        )

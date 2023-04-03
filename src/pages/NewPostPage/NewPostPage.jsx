@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as postsAPI from "../../utilities/posts-api";
 
 
-export default function NewPostPage({ posts, setPosts }) {
+export default function NewPostPage({ posts, setPosts, library }) {
     const [newPost, setNewPost] = useState({text:""})
     const navigate = useNavigate();
 
@@ -39,8 +39,9 @@ export default function NewPostPage({ posts, setPosts }) {
                   placeholder="Write a Post"
                   onChange={handleChange} />
             </div>
-            <div class="field">
-              <button class="button is-primary" type="submit">Add Post</button>
+            <div>
+              <button class="button is-primary" type="submit">Add New Post</button>
+              <button class="button is-link" onClick={() => navigate("/")}>Return To Post Feed</button>
             </div> 
           </form>
         </>
