@@ -13,11 +13,11 @@ export default function PostDetailPage({ posts, deletePost }) {
     console.log(post); 
     return (
       <>
-        <div class="box ">
+        <div class="box">
          <h2 class="subtitle">
            { post.text } 
          </h2>
-         <Link to={`/library/${post.movie.imdbID}`}>{post.movie.Title}</Link>
+         Related Movie: <Link to={`/library/${post.movie.imdbID}`}>{post.movie.Title}</Link>
          <hr></hr>
           <Link
             to={`/edit/${post._id}`}

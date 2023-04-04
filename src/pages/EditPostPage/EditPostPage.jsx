@@ -6,7 +6,7 @@ export default function EditPostPage({ posts, setPosts, library }) {
     const {postId} = useParams();
     const post = posts.find(p => p._id === postId)
     const navigate = useNavigate();
-    const [selectedOption, setSelectedOption] = useState(post && post.movie);
+    const [selectedOption, setSelectedOption] = useState(post && post.movie.imdbID);
     const [updatedPost, setUpdatedPost] = useState({text: post ? post.text : "", movie: post ? post.movie : "", _id: postId});
 
 
@@ -15,6 +15,7 @@ export default function EditPostPage({ posts, setPosts, library }) {
         const updated = await postsAPI.updatePost(postId, updatedPost);
         const updatedPostList = posts.map(p => p._id === updated._id ? updated : p)
         setPosts(updatedPostList); 
+        console.log(selectedOption);
         navigate(`/posts/${postId}`);
     }
 

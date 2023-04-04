@@ -19,7 +19,6 @@ async function getAllPosts(req, res) {
 }
 
 async function create(req, res) {
-    console.log(req.body);
     const movie = await Movie.findOne({imdbID: req.body.movie});
     req.body.movie = movie;
     try {
@@ -47,7 +46,7 @@ async function deletePost(req, res) {
 async function updatePost(req, res) {
     try {
         const postId = req.params.postId;
-        const updatedPost = await Post.findOneAndUpdate({_id: postId, user: req.user._id}, req.body, {new: true});
+        const updatedPost = await Post.findOneAndUpdate({_id: postId, user: req.user._id}, req.body, {new: true}).populate("movie");
         if (!updatedPost) {
             return res.status(404).json({message: 'Post not found or you are not authorized to update it.'});
         }
