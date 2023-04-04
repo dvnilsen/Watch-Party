@@ -11,8 +11,8 @@ export default function NavBar({ user, setUser }) {
     <>
       <nav class="navbar" role="navigation">
         <div class="navbar-brand">
-          <Link class="navbar-item" to="/">
-            <img src="https://i.imgur.com/bdEjnXL.png" width="32" height="28" />
+          <Link class="navbar-item title" to="/">
+            <img src="https://i.imgur.com/bdEjnXL.png" width="32" height="28" />WatchParty
           </Link>
         </div>
           <div class="navbar-item has-dropdown is-hoverable">
@@ -26,7 +26,7 @@ export default function NavBar({ user, setUser }) {
               <Link class ="navbar-item" to="" onClick={handleLogOut}>Log Out</Link>
             </div>
           </div>
-          <a class="navbar-item navbar-end">Hello {user.name}!</a>
+          <a class="navbar-item navbar-end subtitle">Hello {user.name}!</a>
       </nav>
     </>
   );
