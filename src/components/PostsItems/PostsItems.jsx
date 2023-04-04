@@ -10,10 +10,7 @@ export default function PostsItems({ post, index }) {
       <h2 class="subtitle">
         { post.text } 
       </h2>
-      <button class="button is-link" onClick={() => navigate(`/posts/${post._id}`)}>View Post</button>
-        <div>
-          Posted: {new Date(post.createdAt).toLocaleString()} 
-        </div>
+      <button class="button is-link" onClick={() => navigate(`/posts/${post._id}`)}>View Post Details</button>
      </div>
     )
     }

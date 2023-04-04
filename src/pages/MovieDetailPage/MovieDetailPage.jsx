@@ -35,6 +35,7 @@ export default function MovieDetailPage({ library, movies, user }) {
             <div class="content">
                 <a href={`https://www.imdb.com/title/${movie.imdbID}`}>IMDb Page</a>
             </div>
+            <hr />
             { whichButton ? <button class="button is-danger mx-2" onClick={() => addMovie(movie)}>Remove From My Movies</button> : <button class="button is-primary mx-2" onClick={() => addMovie(movie)}>Add To My Movies</button> }
             <button class="button is-link mx-2" onClick={() => navigate("/library")}>Go To My Movies</button>
         </ul>

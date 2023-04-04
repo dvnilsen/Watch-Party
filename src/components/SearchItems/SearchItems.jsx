@@ -8,7 +8,7 @@ export default function SearchItems({ movie }) {
                 <div>
                     <img src={movie.Poster}/>
                 </div>
-                <li>Title: {movie.Title}</li>
+                <li>{movie.Title}</li>
                 <li>Release Year: {movie.Year}</li>
                 <div class="content">
                     <a href={`https://www.imdb.com/title/${movie.imdbID}`}>IMDb Page</a>

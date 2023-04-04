@@ -10,18 +10,23 @@ export default function NavBar({ user, setUser }) {
   return (
     <>
       <nav class="navbar" role="navigation">
-          <Link class ="navbar-item"  to="/">My Posts</Link>
-          <Link class ="navbar-item" to="/library">My Movies</Link>
+        <div class="navbar-brand">
+          <Link class="navbar-item" to="/">
+            <img src="https://i.imgur.com/bdEjnXL.png" width="32" height="28" />
+          </Link>
+        </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link is-hidden-mobile">
-              More
+              
             </a>
             <div class="navbar-dropdown">
               <Link class ="navbar-item" to="/new">Create New Post</Link>
+              <Link class ="navbar-item" to="/library">My Movies</Link>
               <Link class ="navbar-item" to="/search-movies">Search For Movies</Link>
               <Link class ="navbar-item" to="" onClick={handleLogOut}>Log Out</Link>
             </div>
           </div>
+          <a class="navbar-item navbar-end">Hello {user.name}!</a>
       </nav>
     </>
   );

@@ -46,10 +46,10 @@ export default function NewPostPage({ posts, setPosts, library }) {
                   placeholder="Write a Post"
                   onChange={handleChange} />
             </div>
-            <h1 class="subtitle">Select A Movie From Your Movies</h1>
+            <h1 class="subtitle">Select A Movie To Link To Your Post</h1>
 
                 <select class="select" name="movie" value={selectedOption} onChange={handleSelect}>
-                  <option class="menu-item" value="">Select A Movie</option>
+                  <option class="menu-item" value="">Select From 'My Movies'</option>
                   {library.map((option) => (
                     <option class="menu-item" key={option.Title} value={option.imdbID}>
                       {option.Title}
